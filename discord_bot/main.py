@@ -15,7 +15,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     # 起動したらターミナルにログイン通知が表示される
-    print(f"{client.user}がログインしました")
+    print(f"{client.user}が起動しました")
 
 
 # メッセージ受信時に動作する処理
@@ -30,9 +30,20 @@ async def on_message(message: discord.Message):
         await message.channel.send("<@1084318050976796832>マイクラサーバスタート依頼")
     if message.content.startswith("マイクラサーバ参加希望"):
         await message.channel.send("<@1084318050976796832>マイクラサーバ参加依頼")
+　　if message.content.startswith("W"):
+        await message.channel.send("植樹活動するんやな・・・")
+    if message.content.startswith("X"):
+        await message.channel.send("https://twitter.com/Iruya_Karuma")
+    if message.content.startswith("webサイト"):
+        await message.channel.send("https://sites.google.com/view/iruyakaruma/home")
+    if message.content.startswith("カルマッチ鯖BOT起動中？"):
+        await message.channel.send("オンライン")
+    if message.content.startswith("BOTのバージョン？"):
+        await message.channel.send("```v1.0.2```")
+        await message.channel.send("```Pythonバージョン```")
+        await message.channel.send("```Python 3```")
     if message.content.startswith("!haisinnkibou_f"):
         await message.channel.send("<@&1189899527008817243>")
-
     if "/stop" in message.content:
         if message.author.id == 1084318050976796832:
             await message.channel.send("stop")
